@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+     <script src="https://unpkg.com/@babel/standalone@7.26.0/babel.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <div id="root"></div>
+    <script type="text/babel" data-type="module">
+        import React from "https://esm.sh/react@19/?dev";
+        import ReactDOMClient from "https://esm.sh/react-dom@19/client?dev";
+
+        
+        const Info = (props) => {
+            return (
+                <div className="info-container">
+                    <h1>Info Component</h1>
+                    <img src= {props.image} alt="Placeholder Image"  className="info-image"/>
+                    <div className="info-details">
+                    <p>Name: {props.name}</p>
+                    <p>Age: {props.age}</p>
+                    <button className="info-button"><a href={props.link} target="_blank">Know more</a></button>
+                    </div>
+                </div>
+            );
+        };
+
+        const Information = (props) => {
+            return (
+                <>
+                    <Info image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu0f-kcaF7m4pLn0TUQMVC9IwvEuFuNXRvGBbQJemZ7A8Xszd9G3k9sG0U4XPEjL-U_20NlxwPD5yi9LKBahVp_nyoieGea-RdsZXe5lLb&s=10" name="Sundhar pichai" age={54} link = "https://en.wikipedia.org/wiki/Sundar_Pichai" />
+                    <Info image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKd92Z1qbuJeFfLxfxEbnxnKGverlA4V0D5OiJFfvhCj64a6ivqeVRDQM-a8b-261td0s0iR5keXLw2PGKpdLojxy7MgaQieuNAhCwI3cy1w&s=10" name="sathya nadella" age={58} link = "https://en.wikipedia.org/wiki/Satya_Nadella" />
+                    <Info image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFmRSo-E4W-4HQtWawioM2TevwSqL5TXxq9KqOEHBRhsh4tuqNRgxqZ79TpHjJaFIEWrrDirGueYRepY-OI39iGzKiv2ykdnSb5zy53SpXDw&s=10" name = "tim cook" age={62} link = "https://en.wikipedia.org/wiki/Tim_Cook" />
+                    <Info image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRopVHnRT5kSRJc-VQkSFA2yKWMCeTPfzbkCCnfdp3KoxZSEgbZZwfXvzYx4J09EXuv8wgeoW72v4RdlycpLudjpJgeBAF52Bzz7Ym4fE9B&s=10" name = "Elon musk" age={52} link = "https://en.wikipedia.org/wiki/Elon_Musk" />
+                    
+                    <Info image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjvpb6XAdcx16bj6_iAMmu_Oskhq2GoDIB3fNzlc8_qlQRHiCdbQVRjW3ht3WInqU_BQ7XLbjw5BDu_ubiY6kyJub8HsYy9gMARYY4ESCW&s=10" name = "Jeff bezos" age={58} link = "https://en.wikipedia.org/wiki/Jeff_Bezos" />
+                   <Info  image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE8FV4txTnGEe63Q1zpBpRuYYeNNoEDxeV961PTSIMhTKbIjm4xURUcWctET18fiyzqVFnU_PrAnb4xFlG8gg-lWW4BoLEPipaFySStF-F9g&s=10" name = "Mark zuckerberg" age={39} link = "https://en.wikipedia.org/wiki/Mark_Zuckerberg" /> 
+                   
+                   <Info image = "image.JPG" name = "Bhaskar Reddy" age = "19" link = "https://www.linkedin.com/in/bhaskar-reddy-3b1237204/" />
+                </>
+            );
+        };
+        const root = ReactDOMClient.createRoot(document.getElementById("root"));
+        root.render(<Information />);
+    </script>
+  </body>
+</html>
